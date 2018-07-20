@@ -9,3 +9,6 @@ def index(request):
     c = images[2::4]
     d = images[3::4]
     return render(request, 'index.html',locals())
+def image(request,image_id):
+    image = Image.objects.get(id=image_id)
+    return render (request, 'image.html', {"image":image})
