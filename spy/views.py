@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from .models import Image
 
 # Create your views here.
@@ -9,9 +10,11 @@ def index(request):
     c = images[2::4]
     d = images[3::4]
     return render(request, 'index.html',locals())
+
+
 def image(request,image_id):
     image = Image.objects.get(id=image_id)
-    return render (request, 'image.html', {"image":image})    return render (request, 'image.html', {"image":image})
+    return render (request, 'image.html', {"image":image})
 
 
 def search_results(request):
@@ -30,3 +33,11 @@ def search_results(request):
    else:
        message = "You haven't searched for any term"
        return render(request, 'search.html',{"message":message})
+
+def get_location(request,location):
+   images = Image.filter_location(location)
+   return render(request,'location.html',locals())
+
+def get_category(request,category):
+   image = Image.filter_category(category)
+   return render(request,'category.html',locals())
