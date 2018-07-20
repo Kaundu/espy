@@ -54,3 +54,77 @@
             </a>
         </div>
     </div>
+    <div class="container">
+    <div class="row">
+{#        {% for image_item  in images %}#}
+{#            <div class="col-xs-4 col-sm-4 col-md-4 " id="xso">#}
+{#                <div class="card" >#}
+{#                    <img class="card-img-bottom" src="{{image_item.image.url}}" class="img-fluid img-thumbnail" data-toggle="modal"  alt="{{image_item.image_name}}">#}
+{#                    <div class="card-img-overlay">#}
+{#                        <h3 class="card-title">{{image_item.image_name}}</h3>#}
+{##}
+{#                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image_item.id}}">#}
+{#                            See image#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
+        <div class="row">
+          <div class="column">
+              {%  for image_item in a %}
+                 <div class="card" >
+                    <img class="card-img-bottom" src="{{image_item.image.url}}" class="img-fluid img-thumbnail" data-toggle="modal"  alt="{{image_item.image_name}}">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">{{image_item.image_name}}</h3>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image_item.id}}">
+                            See image
+                        </button>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+          <div class="column">
+              {%  for image_item in b %}
+                 <div class="card" >
+                    <img class="card-img-bottom" src="{{image_item.image.url}}" class="img-fluid img-thumbnail" data-toggle="modal"  alt="{{image_item.image_name}}">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">{{image_item.image_name}}</h3>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image_item.id}}">
+                            See image
+                        </button>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+            <div class="column">
+              {%  for image_item in c %}
+                 <div class="card" >
+                    <img class="card-img-bottom" src="{{image_item.image.url}}" class="img-fluid img-thumbnail" data-toggle="modal"  alt="{{image_item.image_name}}">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">{{image_item.image_name}}</h3>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image_item.id}}">
+                            See image
+                        </button>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+            <div class="column">
+              {%  for image_item in d %}
+                 <div class="card" >
+                    <img class="card-img-bottom" src="{{image_item.image.url}}" class="img-fluid img-thumbnail" data-toggle="modal"  alt="{{image_item.image_name}}">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">{{image_item.image_name}}</h3>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image_item.id}}">
+                            See image
+                        </button>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+
