@@ -8,7 +8,7 @@ class Location(models.Model):
         return self.name
 
     def save_location(self):
-        self.save()        self.save()
+        self.save()
 
 
 class Categoryy(models.Model):
@@ -19,6 +19,7 @@ class Categoryy(models.Model):
 
     def save_category(self):
         self.save()
+
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length =25)
@@ -31,3 +32,24 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.all()
+        return images
+
+    @classmethod
+    def search_by_name(cls, search_term):
+        image = cls.objects.filter(image_name__icontains=search_term)
+        return image
+
+    @classmethod
+    def filter_location(cls, location):
+        # location = Location.objects.(image_location=location)
+        images = cls.objects.filter(location__image_location__istartswith=location)
+        return images
+
+    @classmethod
+    def filter_category(cls, category):
+        images = cls.objects.filter(category__image_category__istartswith=category)
+        return images
